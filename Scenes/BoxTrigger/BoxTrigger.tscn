@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://dyldc2klq5kui"]
+
+[ext_resource type="Script" path="res://Scenes/BoxTrigger/BoxTrigger.cs" id="1_cebht"]
+[ext_resource type="Texture2D" uid="uid://c3hd7q6e37fb1" path="res://Assets/pngaaa.com-3113939.png" id="2_ho43d"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3u26d"]
+transparency = 4
+albedo_color = Color(0.654902, 0.231373, 0.027451, 0.831373)
+
+[sub_resource type="BoxMesh" id="BoxMesh_a1hrk"]
+material = SubResource("StandardMaterial3D_3u26d")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b1qo1"]
+
+[node name="BoxTrigger" type="Node3D"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0.5, 0, -0.5)
+script = ExtResource("1_cebht")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+monitoring = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+mesh = SubResource("BoxMesh_a1hrk")
+skeleton = NodePath("../..")
+
+[node name="Sprite3D" type="Sprite3D" parent="Area3D/MeshInstance3D"]
+pixel_size = 0.005
+billboard = 1
+no_depth_test = true
+texture = ExtResource("2_ho43d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_b1qo1")

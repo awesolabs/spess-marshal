@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0a7ccc6ep20g"]
+
+[ext_resource type="Script" path="res://Scenes/Act2/Act2.cs" id="1_b0kpk"]
+[ext_resource type="PackedScene" uid="uid://csdue4sn8r6k4" path="res://Scenes/UI/NeuralWare/NeuralWare.tscn" id="2_eecjn"]
+[ext_resource type="Script" path="res://Core/FlyCamera.gd" id="2_w2w5c"]
+
+[node name="Act2" type="Node3D"]
+script = ExtResource("1_b0kpk")
+
+[node name="NeuralWare" parent="." instance=ExtResource("2_eecjn")]
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -111.5
+offset_top = -26.0
+offset_right = 111.5
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="CenterContainer"]
+layout_mode = 2
+text = "Act 2 - Catalyst of Knowledge"
+
+[node name="Camera3D" type="Camera3D" parent="."]
+script = ExtResource("2_w2w5c")

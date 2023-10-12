@@ -1,0 +1,33 @@
+[gd_scene load_steps=12 format=3 uid="uid://dganfm06ppgov"]
+
+[ext_resource type="Script" path="res://Scenes/Game/Game.cs" id="1_ghnb3"]
+[ext_resource type="PackedScene" uid="uid://dftq4h3qkcu4f" path="res://Scenes/Menu/Menu.tscn" id="2_coxql"]
+[ext_resource type="PackedScene" uid="uid://c5iu3v1rkq34a" path="res://Scenes/Act1/Act1.tscn" id="3_8xxyr"]
+[ext_resource type="PackedScene" uid="uid://b0a7ccc6ep20g" path="res://Scenes/Act2/Act2.tscn" id="4_pl1rr"]
+[ext_resource type="PackedScene" uid="uid://bixkrqpsrj23w" path="res://Scenes/Act3/Act3.tscn" id="5_05oe4"]
+[ext_resource type="PackedScene" uid="uid://bb7js27m4d727" path="res://Scenes/Credits/Credits.tscn" id="6_qy5lh"]
+[ext_resource type="PackedScene" uid="uid://dun1s4o5lrg36" path="res://Scenes/Player/Player.tscn" id="7_35nab"]
+[ext_resource type="PackedScene" uid="uid://dyldc2klq5kui" path="res://Scenes/BoxTrigger/BoxTrigger.tscn" id="8_38v1w"]
+[ext_resource type="PackedScene" uid="uid://ck4p1paj8e57g" path="res://Scenes/Enemies/SWAT.tscn" id="8_053my"]
+[ext_resource type="PackedScene" uid="uid://cs4j5hebpa6qb" path="res://Scenes/Bullet/Bullet.tscn" id="10_yjp83"]
+
+[sub_resource type="Environment" id="Environment_fered"]
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ssr_enabled = true
+ssao_enabled = true
+
+[node name="Game" type="Node3D"]
+script = ExtResource("1_ghnb3")
+MenuScene = ExtResource("2_coxql")
+Act1Scene = ExtResource("3_8xxyr")
+Act2Scene = ExtResource("4_pl1rr")
+Act3Scene = ExtResource("5_05oe4")
+CreditsScene = ExtResource("6_qy5lh")
+AgentMob = ExtResource("7_35nab")
+SwatMob = ExtResource("8_053my")
+BoxTrigger = ExtResource("8_38v1w")
+Bullet = ExtResource("10_yjp83")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_fered")

@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=3 uid="uid://ck4p1paj8e57g"]
+
+[ext_resource type="Script" path="res://Scenes/Enemies/SWAT.cs" id="1_5col6"]
+[ext_resource type="PackedScene" uid="uid://caoh8s2b11tus" path="res://Scenes/Enemies/SWAT.glb" id="2_c0uls"]
+[ext_resource type="AudioStream" uid="uid://bbh1bc667gjid" path="res://Assets/Sounds/Weapons/shot_alt.ogg" id="3_5ht3e"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pkaj2"]
+
+[node name="SWAT" type="CharacterBody3D" node_paths=PackedStringArray("Animation", "Model", "LookScanRay", "FireTimer", "FireAudio")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 0.5, 0, -0.5)
+script = ExtResource("1_5col6")
+Animation = NodePath("Model/AnimationPlayer")
+Model = NodePath("Model")
+LookScanRay = NodePath("RayCast3D")
+FireTimer = NodePath("Fire")
+FireAudio = NodePath("FireAudio")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.995596, 0)
+shape = SubResource("CapsuleShape3D_pkaj2")
+
+[node name="Model" parent="." instance=ExtResource("2_c0uls")]
+
+[node name="Skeleton3D" parent="Model/RootNode/CharacterArmature" index="0"]
+bones/1/position = Vector3(4.53217e-06, 0.00828592, -0.000442991)
+bones/1/rotation = Quaternion(0.000460926, 0.2358, 0.000137049, 0.971801)
+bones/4/rotation = Quaternion(0.0851232, -0.237446, 0.0115659, 0.967595)
+bones/5/rotation = Quaternion(0.00283288, 1.89167e-07, 2.06766e-07, 0.999996)
+bones/7/rotation = Quaternion(-0.022831, -0.000275638, 0.000120274, 0.999739)
+bones/10/rotation = Quaternion(0.674724, -0.404056, -0.387813, -0.480715)
+bones/11/rotation = Quaternion(-0.121328, -0.0295654, -0.184313, 0.974902)
+bones/14/rotation = Quaternion(-0.040591, -0.0320923, 0.0670639, 0.996406)
+bones/15/rotation = Quaternion(-0.0787951, 0.0116669, 0.0250725, 0.996507)
+bones/24/rotation = Quaternion(-0.0455572, 0.142138, -0.13835, 0.979071)
+bones/34/rotation = Quaternion(0.0417278, -0.122015, 0.0851815, 0.987985)
+bones/35/rotation = Quaternion(-0.0885877, -0.0556028, 0.121992, 0.987005)
+bones/38/rotation = Quaternion(-0.626194, -0.30754, -0.438827, 0.566331)
+bones/39/rotation = Quaternion(-0.20557, -0.192987, 0.321805, 0.903846)
+bones/40/rotation = Quaternion(0.0159816, -0.0220072, -0.0726256, 0.996988)
+bones/42/rotation = Quaternion(-0.741193, 0.0916489, -0.0458297, 0.663425)
+bones/43/rotation = Quaternion(-0.620677, -0.00746439, 0.0140447, 0.783905)
+bones/44/rotation = Quaternion(0.867926, 0.0641336, -0.21632, -0.442491)
+bones/47/rotation = Quaternion(-0.746977, -0.0295104, 0.0334434, 0.663352)
+bones/48/rotation = Quaternion(-0.641345, 0.0369972, 0.0801333, 0.762159)
+bones/49/rotation = Quaternion(0.923386, -0.0460729, -0.0639175, -0.3757)
+bones/52/rotation = Quaternion(-0.729788, -0.132758, 0.102163, 0.662833)
+bones/53/rotation = Quaternion(-0.54042, -0.0807198, 0.264057, 0.794799)
+bones/54/rotation = Quaternion(0.69467, 0.00921616, -0.521252, -0.495626)
+bones/57/rotation = Quaternion(-0.633922, -0.240592, 0.15567, 0.718349)
+bones/58/rotation = Quaternion(-0.647841, 0.112869, 0.134306, 0.7413)
+bones/59/rotation = Quaternion(0.874262, -0.042289, 0.000567671, -0.483608)
+bones/61/rotation = Quaternion(-0.138029, -0.535792, 0.291276, 0.780406)
+bones/62/rotation = Quaternion(0.120684, 0.0108842, -0.0792584, 0.989462)
+bones/63/rotation = Quaternion(-0.327118, 0.0829014, -0.306399, 0.890079)
+bones/65/rotation = Quaternion(-0.535181, 0.0210251, 0.835917, -0.11993)
+bones/66/rotation = Quaternion(0.18723, 0.681868, -0.18723, 0.681869)
+bones/68/rotation = Quaternion(0.555137, 0.126012, 0.80429, 0.170474)
+bones/69/rotation = Quaternion(0.165384, -0.687494, 0.165384, 0.687494)
+bones/71/rotation = Quaternion(0.614617, 0.347684, -0.346515, 0.617486)
+bones/75/position = Vector3(-0.000685071, 0.000227517, 0.00180518)
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+target_position = Vector3(0, 0, 50)
+collide_with_areas = true
+
+[node name="Fire" type="Timer" parent="."]
+wait_time = 0.6
+autostart = true
+
+[node name="FireAudio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_5ht3e")
+
+[editable path="Model"]

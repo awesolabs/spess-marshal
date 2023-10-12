@@ -1,0 +1,146 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/open/space/basic,
+/area/space)
+"M" = (
+/turf/open/floor/plating,
+/area/space)
+"O" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/cable,
+/obj/machinery/door/poddoor/preopen{
+	id = "brigprison";
+	name = "Prison Blast Door"
+	},
+/turf/open/floor/plating,
+/area/space)
+"X" = (
+/obj/effect/landmark/event_spawn,
+/obj/structure/cable,
+/obj/effect/turf_decal/tile/neutral/fourcorners,
+/turf/open/floor/iron,
+/area/space)
+"Y" = (
+/turf/closed/wall/r_wall,
+/area/space)
+
+(1,1,1) = {"
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+"}
+(2,1,1) = {"
+a
+a
+a
+a
+X
+a
+a
+a
+a
+a
+"}
+(3,1,1) = {"
+a
+a
+Y
+M
+M
+M
+M
+Y
+a
+a
+"}
+(4,1,1) = {"
+a
+a
+Y
+M
+M
+M
+M
+Y
+a
+a
+"}
+(5,1,1) = {"
+a
+a
+Y
+O
+O
+O
+O
+Y
+a
+a
+"}
+(6,1,1) = {"
+a
+a
+Y
+M
+M
+M
+M
+Y
+a
+a
+"}
+(7,1,1) = {"
+a
+a
+Y
+M
+M
+M
+M
+Y
+a
+a
+"}
+(8,1,1) = {"
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+"}
+(9,1,1) = {"
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+"}
+(10,1,1) = {"
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+"}

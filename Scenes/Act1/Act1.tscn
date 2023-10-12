@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5iu3v1rkq34a"]
+
+[ext_resource type="Script" path="res://Scenes/Act1/Act1.cs" id="1_bexiv"]
+[ext_resource type="PackedScene" uid="uid://csdue4sn8r6k4" path="res://Scenes/UI/NeuralWare/NeuralWare.tscn" id="2_6wtp8"]
+[ext_resource type="Script" path="res://Core/FlyCamera.gd" id="2_360db"]
+
+[node name="Act1" type="Node3D"]
+script = ExtResource("1_bexiv")
+
+[node name="NeuralWare" parent="." instance=ExtResource("2_6wtp8")]
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -90.0
+offset_top = -26.0
+offset_right = 90.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="CenterContainer"]
+layout_mode = 2
+text = "Act 1 - Rightous Pursuit"
+
+[node name="Camera3D" type="Camera3D" parent="."]
+script = ExtResource("2_360db")

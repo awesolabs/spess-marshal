@@ -1,0 +1,45 @@
+[gd_scene load_steps=10 format=3 uid="uid://cs4j5hebpa6qb"]
+
+[ext_resource type="Script" path="res://Scenes/Bullet/Bullet.cs" id="1_x5q5x"]
+[ext_resource type="AudioStream" uid="uid://b160h5a8qvybo" path="res://Assets/Sounds/Effects/ric1.ogg" id="2_xa5fp"]
+[ext_resource type="AudioStream" uid="uid://b2oy0buakvrfs" path="res://Assets/Sounds/Effects/ric2.ogg" id="3_1oq0o"]
+[ext_resource type="AudioStream" uid="uid://bfc4jgk86u1hs" path="res://Assets/Sounds/Effects/ric3.ogg" id="4_26we0"]
+[ext_resource type="AudioStream" uid="uid://r5f4v1qckl24" path="res://Assets/Sounds/Effects/ric4.ogg" id="5_xox20"]
+[ext_resource type="AudioStream" uid="uid://d1a7qtvc7p0qf" path="res://Assets/Sounds/Effects/ric5.ogg" id="6_u3fth"]
+[ext_resource type="AudioStream" uid="uid://hnlga1uk4hay" path="res://Assets/Sounds/Effects/pierce.ogg" id="7_0gwh5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8l8hs"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ny6x3"]
+
+[node name="Bullet" type="Area3D" node_paths=PackedStringArray("RicAudio", "PierceAudio")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.5, 0)
+script = ExtResource("1_x5q5x")
+RicAudio = [NodePath("RicAudio1"), NodePath("RicAudio2"), NodePath("RicAudio3"), NodePath("RicAudio4"), NodePath("RicAudio5")]
+PierceAudio = NodePath("PierceAudio")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 1.07, 0, 0, 0.498065)
+shape = SubResource("BoxShape3D_8l8hs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.31, 0, 0, 0.097003)
+mesh = SubResource("SphereMesh_ny6x3")
+
+[node name="RicAudio1" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_xa5fp")
+
+[node name="RicAudio2" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_1oq0o")
+
+[node name="RicAudio3" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_26we0")
+
+[node name="RicAudio4" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_xox20")
+
+[node name="RicAudio5" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("6_u3fth")
+
+[node name="PierceAudio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("7_0gwh5")
